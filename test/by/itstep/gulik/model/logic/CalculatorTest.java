@@ -52,6 +52,13 @@ public class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    @Test(timeout = 3000)
+    public void testMulPower() {
+        int a = 10;
+        int b = 3;
+        Calculator.mul(a, b);
+    }
+
     @Test
     public void testDiv() {
 
@@ -65,5 +72,12 @@ public class CalculatorTest {
 //            Assert.fail();
 //        }
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testDivByZero() {
+        int a = 10;
+        int b = 0;
+        Calculator.div(a, b);
     }
 }
